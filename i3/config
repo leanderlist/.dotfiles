@@ -1,0 +1,169 @@
+set $fm eDP-1
+set $sm HDMI-1
+
+set $mod Mod4
+
+font pango:JetBrainsMono Nerd Font 8
+
+exec --no-startup-id dex-autostart --autostart --environment i3
+
+# NetworkManager
+exec --no-startup-id nm-applet
+
+floating_modifier $mod
+
+tiling_drag modifier titlebar
+
+bindsym $mod+q kill
+
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# split in horizontal orientation
+bindsym $mod+h split h
+
+# split in vertical orientation
+bindsym $mod+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+# Define names for default workspaces for which we configure key bindings later on.
+# We use variables to avoid repeating the names in multiple places.
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+
+set $ws11 "11"
+set $ws12 "12"
+set $ws13 "13"
+set $ws14 "14"
+set $ws15 "15"
+set $ws16 "16"
+set $ws17 "17"
+set $ws18 "18"
+set $ws19 "19"
+set $ws20 "20"
+
+workspace 1 output $fm
+workspace 2 output $fm
+workspace 3 output $fm
+workspace 4 output $fm
+workspace 5 output $fm
+workspace 6 output $fm
+workspace 7 output $fm
+workspace 8 output $fm
+workspace 9 output $fm
+workspace 10 output $fm
+
+workspace 11 output $sm
+workspace 12 output $sm
+workspace 13 output $sm
+workspace 14 output $sm
+workspace 15 output $sm
+workspace 16 output $sm
+workspace 17 output $sm
+workspace 18 output $sm
+workspace 19 output $sm
+workspace 20 output $sm
+
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+# exit i3 (logs you out of your X session)
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+
+        # Pressing left will shrink the window’s width.
+        # Pressing right will grow the window’s width.
+        # Pressing up will shrink the window’s height.
+        # Pressing down will grow the window’s height.
+        bindsym $left       resize shrink width 10 px or 10 ppt
+        bindsym $down       resize grow height 10 px or 10 ppt
+        bindsym $up         resize shrink height 10 px or 10 ppt
+        bindsym $right      resize grow width 10 px or 10 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym Left        resize shrink width 10 px or 10 ppt
+        bindsym Down        resize grow height 10 px or 10 ppt
+        bindsym Up          resize shrink height 10 px or 10 ppt
+        bindsym Right       resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape or $mod+r
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $mod+r mode "default"
+}
+
+bindsym $mod+r mode "resize
+
+
+
+bindsym $mod+Return exec kitty
+
+# gaps
+gaps inner 10
+gaps outer 10
+# Keine Gaps wenn nur ein Fenster geöffnet ist
+smart_gaps on
+hide_edge_borders smart
+
+
+client.focused #CDD6F4 #CDD6F4 #CDD6F4 #CDD6F4 #CDD6F4
+client.unfocused #00000000 #00000000 #00000000 #00000000 #00000000
+
+for_window [class="Bitwarden"] floating enable, resize set 1000 600, move scratchpad, border pixel 0
+bindsym $mod+b [class="Bitwarden"] scratchpad show; move position center
+
+for_window [class="gnome-calculator"] floating enable
+for_window [class="org.gnome.Nautilus"] floating enable, resize set 1000 600
+exec_always flatpak run com.bitwarden.desktop
+
+default_border pixel 3
+default_floating_border pixel 3
+for_window [class=".*"] border pixel 3
+
+exec xinput set-prop "Elan Touchpad" "libinput Tapping Enabled" 1
+exec_always $HOME/.config/polybar/launch.sh
+exec_always --no-startup-id autotiling 
+
+exec --no-startup-id picom
+exec --no-startup-id nitrogen --restore
+exec redshift -l 48.32280000:16.19854000
+exec --no-startup-id sxhkd
+exec --no-startup-id xset b off
+exec --no-startup-id xinput set-prop "Elan Touchpad" "libinput Natural Scrolling Enabled" 1
+exec --no-startup-id xrandr --output HDMI-1 --auto --left-of eDP-1

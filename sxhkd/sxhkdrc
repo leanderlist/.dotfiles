@@ -1,0 +1,53 @@
+#MediaKeys
+XF86MonBrightnessDown
+	$HOME/.scripts/brightnessControl.sh down
+
+XF86MonBrightnessUp
+	$HOME/.scripts/brightnessControl.sh up 
+
+
+XF86AudioPlay
+	playerctl play-pause
+
+XF86AudioPrev
+	playerctl previous 
+
+XF86AudioNext
+	playerctl next
+
+
+XF86AudioRaiseVolume
+	pulseaudio-control --volume-max 130 --volume-step 5 up
+
+XF86AudioLowerVolume
+	pulseaudio-control --volume-max 130 --volume-step 5 down
+
+XF86AudioMute
+	pulseaudio-control togmute
+
+XF86AudioMicMute
+	pactl set-source-mute @DEFAULT_SOURCE@ toggle
+
+
+
+#Workspaces
+super+{1-9,0}
+	i3-msg workspace {1-9,10}
+
+super+shift+{1-9,0}
+	i3-msg move container to workspace number {1-9,10}
+
+alt+{1-9,0}
+	i3-msg workspace {11,12,13,14,15,16,17,18,19,20}
+
+alt+shift+{1-9,0}
+	i3-msg move container to workspace number {11,12,13,14,15,16,17,18,19,20}
+
+
+#Other
+super+d
+	rofi -show drun
+super+l
+	betterlockscreen -l
+super+ctrl+r
+	bash /home/leander/.config/polybar/launch.sh

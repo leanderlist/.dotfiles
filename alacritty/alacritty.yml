@@ -1,0 +1,23 @@
+window:
+  padding:
+    x: 10
+    y: 10
+  opacity: 0.5
+
+font:
+  normal:
+    family: JetBrainsMono Nerd Font
+  bold:
+    family: JetBrainsMono Nerd Font
+    style: Bold
+  italic:
+    family: JetBrainsMono Nerd Font
+    style: Italic
+  bold_italic:
+    family: JetBrainsMono Nerd Font
+    style: Bold Italic
+  size: 11
+
+import:
+  - ~/.config/alacritty/catppuccin/catppuccin-mocha.yml
+
