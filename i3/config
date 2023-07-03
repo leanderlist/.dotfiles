@@ -137,7 +137,7 @@ bindsym $mod+Return exec kitty
 # gaps
 gaps inner 10
 gaps outer 10
-# Keine Gaps wenn nur ein Fenster geöffnet ist
+# no gaps/borders when only one window is opened
 smart_gaps on
 hide_edge_borders smart
 
@@ -150,7 +150,6 @@ bindsym $mod+b [class="Bitwarden"] scratchpad show; move position center
 
 for_window [class="gnome-calculator"] floating enable
 for_window [class="org.gnome.Nautilus"] floating enable, resize set 1000 600
-exec_always flatpak run com.bitwarden.desktop
 
 default_border pixel 3
 default_floating_border pixel 3
@@ -162,7 +161,6 @@ exec_always --no-startup-id autotiling
 
 exec --no-startup-id picom
 exec --no-startup-id nitrogen --restore
-exec redshift -l 48.32280000:16.19854000
 exec --no-startup-id sxhkd
 exec --no-startup-id xset b off
 exec --no-startup-id xinput set-prop "Elan Touchpad" "libinput Natural Scrolling Enabled" 1
