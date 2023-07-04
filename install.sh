@@ -40,7 +40,7 @@ elif [[ "$upd_cmd" == "apt update " ]]; then
 elif [[ "$upd_cmd" == "zypper refresh " ]]; then
 	sudo $install_cmd wget stow i3 polybar kitty neovim picom bat plocate ocrmypdf dunst flameshot rofi xprop bluez unzip sxhkd wireless-tools
 elif [[ "$upd_cmd" == "dnf update -y" ]]; then
-	sudo $install_cmd -y wget stow i3 polybar kitty neovim bat plocate ocrmypdf dunst flameshot rofi xprop bluez unzip sxhkd python3-i3ipc
+	sudo $install_cmd -y wget stow i3 polybar kitty neovim bat plocate ocrmypdf dunst flameshot rofi xprop bluez unzip sxhkd python3-i3ipc golang picom
 	curl -L -o wireless-tools.rpm https://kojipkgs.fedoraproject.org//packages/wireless-tools/29/13.el7/x86_64/wireless-tools-29-13.el7.x86_64.rpm
 	sudo $install_cmd -y ./wireless-tools.rpm
 	rm wireless-tools.rpm
@@ -195,3 +195,24 @@ git clone https://github.com/nwg-piotr/autotiling
 sudo mv ./autotiling/autotiling/main.py /usr/local/bin/autotiling
 sudo chmod +x /usr/local/bin/autotiling
 rm -rf autotiling
+
+# Installing pulseaudio-ctl
+echo
+echo -------------------------
+echo Installing pulseaudio-ctl
+echo -------------------------
+
+git clone https://github.com/graysky2/pulseaudio-ctl
+cd pulseaudio-ctl
+sudo make
+sudo make install
+cd ..
+rm -rf pulseaudio-ctl
+
+# Installing lf file manager
+echo
+echo -------------
+echo Installing lf
+echo -------------
+
+env CGO_ENABLED=0 go install -ldflags="-s -w" github.com/gokcehan/lf@latest
