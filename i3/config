@@ -155,13 +155,15 @@ default_border pixel 3
 default_floating_border pixel 3
 for_window [class=".*"] border pixel 3
 
-exec xinput set-prop "Elan Touchpad" "libinput Tapping Enabled" 1
 exec_always $HOME/.config/polybar/launch.sh
 exec_always --no-startup-id autotiling 
-
 exec --no-startup-id picom
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id sxhkd
+
+# System settings
 exec --no-startup-id xset b off
 exec --no-startup-id xinput set-prop "Elan Touchpad" "libinput Natural Scrolling Enabled" 1
+exec --no-startup-id xinput set-prop "Elan Touchpad" "libinput Tapping Enabled" 1
+exec --no-startup-id xset b off
 exec --no-startup-id xrandr --output HDMI-1 --auto --left-of eDP-1

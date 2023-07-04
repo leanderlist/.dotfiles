@@ -15,16 +15,6 @@ XF86AudioPrev
 XF86AudioNext
 	playerctl next
 
-
-XF86AudioRaiseVolume
-	pulseaudio-control --volume-max 130 --volume-step 5 up
-
-XF86AudioLowerVolume
-	pulseaudio-control --volume-max 130 --volume-step 5 down
-
-XF86AudioMute
-	pulseaudio-control togmute
-
 XF86AudioMicMute
 	pactl set-source-mute @DEFAULT_SOURCE@ toggle
 
