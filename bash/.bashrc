@@ -47,4 +47,5 @@ alias locate="plocate "
 alias img="kitty +kitten icat "
 alias cat="bat "
 
+stty werase '^h'
 eval "$(starship init bash)"
