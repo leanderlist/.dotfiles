@@ -18,6 +18,14 @@ XF86AudioNext
 XF86AudioMicMute
 	pactl set-source-mute @DEFAULT_SOURCE@ toggle
 
+XF86AudioMute
+	pulseaudio-control togmute
+
+XF86AudioRaiseVolume
+	pulseaudio-control --volume-max 130 --volume-step 5 up
+
+XF86AudioLowerVolume
+	pulseaudio-control --volume-max 130 --volume-step 5 down
 
 
 #Workspaces
