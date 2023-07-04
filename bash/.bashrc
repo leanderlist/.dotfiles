@@ -35,7 +35,6 @@ export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 export EDITOR="/usr/bin/nvim"
 export PKG_CONFIG_PATH="/usr/bin/"
 export XDG_CONFIG_HOME="$HOME/.config"
-export XDG_DATA_HOME="C:\users%username%\AppData\Roaming"
 
 
 alias sudo="sudo "
