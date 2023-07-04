@@ -140,7 +140,7 @@ echo -------------------------
 
 git clone https://github.com/ericmurphyxyz/rofi-wifi-menu.git
 cd rofi-wifi-menu
-sudo mv ./rofi-wifi-menu.sh /usr/bin/
+sudo mv ./rofi-wifi-menu.sh /usr/bin/rofi-wifi-menu
 cd ..
 rm -rf rofi-wifi-menu/
 
