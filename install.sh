@@ -216,3 +216,4 @@ echo Installing lf
 echo -------------
 
 env CGO_ENABLED=0 go install -ldflags="-s -w" github.com/gokcehan/lf@latest
+mv $HOME/go/bin/lf /usr/local/bin/
