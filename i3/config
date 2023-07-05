@@ -162,7 +162,6 @@ exec --no-startup-id nitrogen --restore
 exec --no-startup-id sxhkd
 
 # System settings
-exec --no-startup-id xset b off
 exec --no-startup-id xinput set-prop "Elan Touchpad" "libinput Natural Scrolling Enabled" 1
 exec --no-startup-id xinput set-prop "Elan Touchpad" "libinput Tapping Enabled" 1
 exec --no-startup-id xset b off
