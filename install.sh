@@ -40,7 +40,7 @@ elif [[ "$upd_cmd" == "apt update " ]]; then
 elif [[ "$upd_cmd" == "zypper refresh " ]]; then
 	sudo $install_cmd wget stow i3 polybar kitty neovim picom bat plocate ocrmypdf dunst flameshot rofi xprop bluez unzip sxhkd wireless-tools
 elif [[ "$upd_cmd" == "dnf update -y" ]]; then
-	sudo $install_cmd -y wget stow i3 polybar kitty neovim bat plocate ocrmypdf dunst flameshot rofi xprop bluez unzip sxhkd python3-i3ipc golang picom
+	sudo $install_cmd -y wget stow i3 polybar kitty neovim bat plocate ocrmypdf dunst flameshot rofi xprop bluez unzip sxhkd python3-i3ipc golang picom xinput
 	curl -L -o wireless-tools.rpm https://kojipkgs.fedoraproject.org//packages/wireless-tools/29/13.el7/x86_64/wireless-tools-29-13.el7.x86_64.rpm
 	sudo $install_cmd -y ./wireless-tools.rpm
 	rm wireless-tools.rpm
