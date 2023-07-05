@@ -118,7 +118,7 @@ echo ---------------------------------
 curl -L -o jetbrains.zip https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/JetBrainsMono.zip
 sudo mkdir -p /usr/share/fonts/
 sudo unzip jetbrains.zip -d /usr/share/fonts/
-
+rm jetbrains.zip
 
 # Installing rofi-bluetooth
 echo
@@ -182,6 +182,7 @@ echo ---------------------------
 
 curl -L -o betterlockscreen.zip https://github.com/betterlockscreen/betterlockscreen/archive/refs/heads/main.zip
 unzip betterlockscreen.zip
+rm betterlockscreen.zip
 cd betterlockscreen-main/
 chmod u+x betterlockscreen
 sudo cp betterlockscreen /usr/local/bin/
