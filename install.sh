@@ -14,6 +14,7 @@ elif grep -qi "suse" $release_file; then
 elif grep -qi "fedora" $release_file; then
 	upd_cmd="dnf update -y"
 	install_cmd="dnf install "
+	remove_cmd="dnf remove "
 fi
 
 
@@ -156,6 +157,21 @@ cd rofi-power-menu
 sudo mv ./rofi-power-menu /usr/bin/
 cd ..
 rm -rf rofi-power-menu/
+
+
+# Installing i3lock-color
+echo
+echo -----------------------
+echo Installing i3lock-color
+echo -----------------------
+
+sudo $remove_cmd i3lock
+sudo $install_cmd -y autoconf automake cairo-devel fontconfig gcc libev-devel libjpeg-turbo-devel libXinerama libxkbcommon-devel libxkbcommon-x11-devel libXrandr pam-devel pkgconf xcb-util-image-devel xcb-util-xrm-devel
+git clone https://github.com/Raymo111/i3lock-color.git
+cd i3lock-color
+./install-i3lock-color.sh
+cd ..
+rm -rf i3lock-color
 
 
 # Installing betterlockscreen
