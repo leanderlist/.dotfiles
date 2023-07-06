@@ -76,6 +76,7 @@ mkdir -p ~/.config/sxhkd
 mkdir -p ~/.config/dunst
 mkdir -p ~/.config/i3
 mkdir -p ~/.config/nvim
+mkdir -p ~/.local/share/icons/dunst/
 
 
 # Deleting old .bashrc and .bash_profile files
@@ -99,6 +100,7 @@ stow alacritty/ --target ~/.config/alacritty
 stow betterlockscreen/ --target ~/.config
 stow dunst/ --target ~/.config/dunst
 stow i3/ --target ~/.config/i3
+stow icons/ --target ~/.local/share/icons/dunst
 stow kitty/ --target ~/.config/kitty
 stow lf/ --target ~/.config/lf
 stow nvim/ --target ~/.config/nvim
