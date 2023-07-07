@@ -35,7 +35,7 @@ export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 export EDITOR="/usr/bin/nvim"
 export PKG_CONFIG_PATH="/usr/bin/"
 export XDG_CONFIG_HOME="$HOME/.config"
-
+export GTK_THEME=Catppuccin-Mocha-Standard-Sky-dark
 
 alias sudo="sudo "
 alias v="nvim "
@@ -46,6 +46,7 @@ alias etcher="$HOME/Documents/etcher.AppImage &"
 alias locate="plocate "
 alias img="kitty +kitten icat "
 alias cat="bat "
+alias ssh="kitty +kitten ssh "
 
 stty werase '^h'
 eval "$(starship init bash)"
