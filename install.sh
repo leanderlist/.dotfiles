@@ -109,7 +109,7 @@ stow polybar/ --target ~/.config/polybar
 stow rofi/ --target ~/.config/rofi
 stow starship/ --target ~/.config
 stow sxhkd/ --target ~/.config/sxhkd
-
+stow themes/ --target ~/.themes
 
 # Installing JetBrainsMono NerdFont
 echo
