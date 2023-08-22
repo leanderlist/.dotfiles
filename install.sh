@@ -76,6 +76,7 @@ mkdir -p ~/.config/sxhkd
 mkdir -p ~/.config/dunst
 mkdir -p ~/.config/i3
 mkdir -p ~/.config/nvim
+mkdir -p ~/.themes
 mkdir -p ~/.local/share/icons/dunst/
 
 
